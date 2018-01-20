@@ -1,0 +1,42 @@
+{
+	"name": "legoktm/clover-diff",
+	"description": "A library to create a diff of two clover.xml files",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://www.mediawiki.org/wiki/clover-diff",
+	"authors": [
+		{
+			"name": "Kunal Mehta",
+			"email": "legoktm@member.fsf.org"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Legoktm\\CloverDiff\\": "src/"
+		}
+	},
+	"bin": [
+		"bin/clover-diff"
+	],
+	"require": {
+		"php": ">=5.5.9",
+		"symfony/console": "^3.3"
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "0.9.2",
+		"jakub-onderka/php-console-highlighter": "0.3.2",
+		"mediawiki/mediawiki-codesniffer": "15.0.0",
+		"mediawiki/minus-x": "0.2.1"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpunit",
+			"phpcs -sp",
+			"minus-x check ."
+		],
+		"fix": [
+			"phpcbf",
+			"minus-x fix ."
+		]
+	}
+}
