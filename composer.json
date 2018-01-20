@@ -1,8 +1,8 @@
 {
 	"name": "legoktm/clover-diff",
-	"description": "A library to create a diff of two clover.xml files",
+	"description": "A tool to create a diff of two clover.xml files",
 	"license": "GPL-3.0-or-later",
-	"homepage": "https://www.mediawiki.org/wiki/clover-diff",
+	"homepage": "https://gitlab.com/legoktm/clover-diff",
 	"authors": [
 		{
 			"name": "Kunal Mehta",
