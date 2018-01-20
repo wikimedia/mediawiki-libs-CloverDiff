@@ -72,23 +72,31 @@ class Differ {
 	}
 
 	/**
-	 * @param string $old path to old XML file
-	 * @param string $new path to new XML file
+	 * @param string|null $old path to old XML file
+	 * @param string|null $new path to new XML file
 	 *
 	 * @return Diff
 	 * @throws InvalidArgumentException if old or new don't exist
 	 */
 	public function diff( $old, $new ) {
-		if ( !file_exists( $old ) ) {
+		if ( $old && !file_exists( $old ) ) {
 			throw new InvalidArgumentException( "$old doesn't exist" );
 		}
-		if ( !file_exists( $new ) ) {
+		if ( $new && !file_exists( $new ) ) {
 			throw new InvalidArgumentException( "$new doesn't exist" );
 		}
-		$oldXml = new SimpleXMLElement( file_get_contents( $old ) );
-		$oldFiles = $this->parseFiles( $oldXml );
-		$newXml = new SimpleXMLElement( file_get_contents( $new ) );
-		$newFiles = $this->parseFiles( $newXml );
+		if ( $old ) {
+			$oldXml = new SimpleXMLElement( file_get_contents( $old ) );
+			$oldFiles = $this->parseFiles( $oldXml );
+		} else {
+			$oldFiles = [];
+		}
+		if ( $new ) {
+			$newXml = new SimpleXMLElement( file_get_contents( $new ) );
+			$newFiles = $this->parseFiles( $newXml );
+		} else {
+			$newFiles = [];
+		}
 
 		return new Diff( $oldFiles, $newFiles );
 	}
