@@ -55,6 +55,7 @@ class Diff {
 		}
 		$this->changed = $changed;
 
+		// @todo remove the files we don't care about anymore
 		$this->oldFiles = $oldFiles;
 		$this->newFiles = $newFiles;
 	}
