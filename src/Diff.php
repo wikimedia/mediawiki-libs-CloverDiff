@@ -48,7 +48,9 @@ class Diff {
 		foreach ( $oldFiles as $path => $oldInfo ) {
 			if ( isset( $newFiles[$path] ) ) {
 				$newInfo = $newFiles[$path];
-				if ( $oldInfo !== $newInfo ) {
+				// Check equality after rounding, because we don't care
+				// about changes past 2 decimals, its meaningless
+				if ( round( $oldInfo, 2 ) !== round( $newInfo, 2 ) ) {
 					$changed[] = $path;
 				}
 			}
