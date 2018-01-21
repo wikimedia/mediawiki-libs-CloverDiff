@@ -109,15 +109,22 @@ class DiffPrinter {
 			}
 		}
 
-		// Sort all files in order!
-		usort( $tableRows, function ( $a, $b ) {
-			return strcmp( $a[0], $b[0] );
-		} );
 
-		$table = new Table( $this->output );
-		$table->setHeaders( [
-			'Filename', 'Old %', 'New %'
-		] )->setRows( $tableRows )->render();
+		if ( $tableRows ) {
+			// Sort all files in order!
+			usort( $tableRows, function ( $a, $b ) {
+				return strcmp( $a[0], $b[0] );
+			} );
+
+			$table = new Table( $this->output );
+			$table->setHeaders( [
+				'Filename', 'Old %', 'New %'
+			] )->setRows( $tableRows )->render();
+		} else {
+			$this->output->writeln(
+				'<info>No coverage changes found.</info>'
+			);
+		}
 
 		return $lowered;
 	}
