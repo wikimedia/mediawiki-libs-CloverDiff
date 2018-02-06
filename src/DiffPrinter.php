@@ -33,7 +33,7 @@ class DiffPrinter {
 	private $output;
 
 	/**
-	 * @param OutputInterface $output
+	 * @param OutputInterface $output stdout
 	 */
 	public function __construct( OutputInterface $output ) {
 		$this->output = $output;
@@ -72,7 +72,7 @@ class DiffPrinter {
 	}
 
 	/**
-	 * @param Diff $diff
+	 * @param Diff $diff Diff to print
 	 *
 	 * @return bool Whether any file had lower coverage afterwards
 	 */
@@ -108,7 +108,6 @@ class DiffPrinter {
 				$lowered = true;
 			}
 		}
-
 
 		if ( $tableRows ) {
 			// Sort all files in order!

@@ -24,6 +24,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class DiffCommand extends Command {
+	/**
+	 * Set up our parameters/arguments
+	 */
 	protected function configure() {
 		$this->setName( 'diff' )
 			->addArgument(
@@ -35,6 +38,12 @@ class DiffCommand extends Command {
 			);
 	}
 
+	/**
+	 * @param InputInterface $input stdin
+	 * @param OutputInterface $output stdout
+	 *
+	 * @return int
+	 */
 	protected function execute( InputInterface $input, OutputInterface $output ) {
 		$differ = new Differ();
 		$diff = $differ->diff(

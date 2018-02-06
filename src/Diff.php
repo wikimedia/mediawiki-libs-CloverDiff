@@ -31,8 +31,8 @@ class Diff {
 	private $newFiles;
 
 	/**
-	 * @param array $oldFiles
-	 * @param array $newFiles
+	 * @param array $oldFiles Parsed clover.xml
+	 * @param array $newFiles Parsed clover.xml
 	 */
 	public function __construct( array $oldFiles, array $newFiles ) {
 		$this->missingFromOld = array_diff(
