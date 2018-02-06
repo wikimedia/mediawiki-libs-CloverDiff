@@ -35,11 +35,11 @@ class Diff {
 	 * @param array $newFiles Parsed clover.xml
 	 */
 	public function __construct( array $oldFiles, array $newFiles ) {
-		$this->missingFromOld = array_diff(
+		$this->missingFromNew = array_diff(
 			array_keys( $oldFiles ),
 			array_keys( $newFiles )
 		);
-		$this->missingFromNew = array_diff(
+		$this->missingFromOld = array_diff(
 			array_keys( $newFiles ),
 			array_keys( $oldFiles )
 		);
