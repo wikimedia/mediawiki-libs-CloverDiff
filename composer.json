@@ -30,7 +30,6 @@
 	"scripts": {
 		"test": [
 			"parallel-lint . --exclude vendor",
-			"phpunit",
 			"phpcs -sp",
 			"minus-x check ."
 		],
