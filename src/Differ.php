@@ -30,35 +30,18 @@ class Differ {
 		$files = [];
 		$commonPath = null;
 		foreach ( $xml->project->children() as $node ) {
-			if ( $node->getName() !== 'file' ) {
-				continue;
-			}
-			$coveredLines = 0;
-			$totalLines = 0;
-			foreach ( $node->children() as $child ) {
-				if ( $child->getName() !== 'line' ) {
-					continue;
+			if ( $node->getName() === 'package' ) {
+				// If there's a common namespace I think, PHPUnit will
+				// put everything under a package subnode.
+				foreach ( $node->children() as $subNode ) {
+					if ( $subNode->getName() === 'file' ) {
+						$files += $this->handleFileNode( $subNode, $commonPath );
+					}
 				}
-				$totalLines++;
-				if ( (int)$child['count'] ) {
-					// If count > 0 then it's covered
-					$coveredLines++;
-				}
+			} elseif ( $node->getName() === 'file' ) {
+				$files += $this->handleFileNode( $node, $commonPath );
 			}
-			$path = (string)$node['name'];
-			if ( $totalLines === 0 ) {
-				// Don't ever divide by 0
-				$files[$path] = 0;
-			} else {
-				$files[$path] = $coveredLines / $totalLines * 100;
-			}
-			if ( $commonPath === null ) {
-				$commonPath = $path;
-			} else {
-				while ( strpos( $path, $commonPath ) === false ) {
-					$commonPath = dirname( $commonPath ) . '/';
-				}
-			}
+			// TODO: else?
 		}
 
 		// Now strip common path from everything...
@@ -69,6 +52,38 @@ class Differ {
 		}
 
 		return $sanePathFiles;
+	}
+
+	private function handleFileNode( SimpleXMLElement $node, &$commonPath ) {
+		$coveredLines = 0;
+		$totalLines = 0;
+		foreach ( $node->children() as $child ) {
+			if ( $child->getName() !== 'line' ) {
+				continue;
+			}
+			$totalLines++;
+			if ( (int)$child['count'] ) {
+				// If count > 0 then it's covered
+				$coveredLines++;
+			}
+		}
+		$path = (string)$node['name'];
+		if ( $totalLines === 0 ) {
+			// Don't ever divide by 0
+			$covered = 0;
+		} else {
+			$covered = $coveredLines / $totalLines * 100;
+		}
+		if ( $commonPath === null ) {
+			$commonPath = $path;
+		} else {
+			while ( strpos( $path, $commonPath ) === false ) {
+				$commonPath = dirname( $commonPath ) . '/';
+			}
+		}
+
+		return [ $path => $covered ];
+
 	}
 
 	/**
