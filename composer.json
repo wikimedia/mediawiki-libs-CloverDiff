@@ -38,6 +38,9 @@
 		"fix": [
 			"phpcbf",
 			"minus-x fix ."
+		],
+		"cover": [
+			"phpunit --coverage-html coverage"
 		]
 	}
 }
