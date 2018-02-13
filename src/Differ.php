@@ -83,7 +83,6 @@ class Differ {
 		}
 
 		return [ $path => $covered ];
-
 	}
 
 	/**
