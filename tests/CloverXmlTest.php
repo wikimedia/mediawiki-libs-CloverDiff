@@ -26,20 +26,6 @@ class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 			[
 				"$dir/linter-old.xml",
 				CloverXml::PERCENTAGE,
-				[
-					'ApiQueryLintErrors.php' => 0,
-					'ApiQueryLinterStats.php' => 0,
-					'ApiRecordLint.php' => 0,
-					'CategoryManager.php' => 0,
-					'Database.php' => 0,
-					'Hooks.php' => 0,
-					'LintError.php' => 0,
-					'LintErrorsPager.php' => 0,
-					'MissingCategoryException.php' => 0,
-					'RecordLintJob.php' => 0,
-					'SpecialLintErrors.php' => 94.28571428571428,
-					'TotalsLookup.php' => 0,
-				],
 			],
 			[
 				"$dir/linter-new.xml",
