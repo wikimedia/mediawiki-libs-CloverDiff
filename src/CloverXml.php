@@ -27,6 +27,16 @@ use SimpleXMLElement;
 class CloverXml {
 
 	/**
+	 * Count percentage covered
+	 */
+	const PERCENTAGE = 1;
+
+	/**
+	 * Return (un)covered lines
+	 */
+	const LINES = 2;
+
+	/**
 	 * @var string
 	 */
 	private $fname;
@@ -49,9 +59,10 @@ class CloverXml {
 	}
 
 	/**
+	 * @param int $mode
 	 * @return array
 	 */
-	public function getFiles() {
+	public function getFiles( $mode = self::PERCENTAGE ) {
 		$files = [];
 		$commonPath = null;
 		foreach ( $this->xml->project->children() as $node ) {
@@ -60,11 +71,11 @@ class CloverXml {
 				// put everything under a package subnode.
 				foreach ( $node->children() as $subNode ) {
 					if ( $subNode->getName() === 'file' ) {
-						$files += $this->handleFileNode( $subNode, $commonPath );
+						$files += $this->handleFileNode( $subNode, $commonPath, $mode );
 					}
 				}
 			} elseif ( $node->getName() === 'file' ) {
-				$files += $this->handleFileNode( $node, $commonPath );
+				$files += $this->handleFileNode( $node, $commonPath, $mode );
 			}
 			// TODO: else?
 		}
@@ -79,18 +90,21 @@ class CloverXml {
 		return $sanePathFiles;
 	}
 
-	private function handleFileNode( SimpleXMLElement $node, &$commonPath ) {
+	private function handleFileNode( SimpleXMLElement $node, &$commonPath, $mode ) {
 		$coveredLines = 0;
 		$totalLines = 0;
+		$lines = [];
 		foreach ( $node->children() as $child ) {
 			if ( $child->getName() !== 'line' ) {
 				continue;
 			}
 			$totalLines++;
-			if ( (int)$child['count'] ) {
+			$lineCovered = (int)$child['count'];
+			if ( $lineCovered ) {
 				// If count > 0 then it's covered
 				$coveredLines++;
 			}
+			$lines[(int)$child['num']] = $lineCovered;
 		}
 		$path = (string)$node['name'];
 		if ( $totalLines === 0 ) {
@@ -107,7 +121,8 @@ class CloverXml {
 			}
 		}
 
-		return [ $path => $covered ];
+		$ret = $mode === self::LINES ? $lines : $covered;
+		return [ $path => $ret ];
 	}
 
 }

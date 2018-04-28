@@ -18,9 +18,6 @@
 
 namespace Legoktm\CloverDiff;
 
-use InvalidArgumentException;
-use SimpleXMLElement;
-
 /**
  * Diff two files
  */

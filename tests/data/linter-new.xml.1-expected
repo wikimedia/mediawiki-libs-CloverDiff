@@ -1,0 +1,15 @@
+Array
+(
+    [ApiQueryLintErrors.php] => 0
+    [ApiQueryLinterStats.php] => 0
+    [ApiRecordLint.php] => 0
+    [CategoryManager.php] => 0
+    [Database.php] => 0
+    [Hooks.php] => 0
+    [LintError.php] => 0
+    [LintErrorsPager.php] => 25.961538461538
+    [MissingCategoryException.php] => 0
+    [RecordLintJob.php] => 0
+    [SpecialLintErrors.php] => 94.285714285714
+    [TotalsLookup.php] => 0
+)
