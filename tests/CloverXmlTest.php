@@ -54,6 +54,18 @@ class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 				"$dir/linter-new.xml",
 				CloverXml::METHODS,
 			],
+			[
+				"$dir/core-old.xml",
+				CloverXml::METHODS,
+			],
+			[
+				"$dir/core-new.xml",
+				CloverXml::METHODS,
+			],
+			[
+				"$dir/core6.xml",
+				CloverXml::METHODS,
+			],
 		];
 	}
 

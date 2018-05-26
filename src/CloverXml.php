@@ -107,7 +107,11 @@ class CloverXml {
 		foreach ( $node->children() as $child ) {
 			if ( $child->getName() === 'class' ) {
 				$class = $child['name'];
-				if ( isset( $child['namespace'] ) ) {
+				if ( $child['namespace'] != 'global'
+					// PHPUnit 6 includes the namespace in the class name
+					// in addition to the namespace attribute
+					&& strpos( $class, (string)$child['namespace'] ) !== 0
+				) {
 					$class = "{$child['namespace']}\\$class";
 				}
 				continue;
