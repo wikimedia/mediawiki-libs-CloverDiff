@@ -37,6 +37,11 @@ class CloverXml {
 	const LINES = 2;
 
 	/**
+	 * Count coverage status of classes and functions
+	 */
+	const METHODS = 3;
+
+	/**
 	 * @var string
 	 */
 	private $fname;
@@ -94,15 +99,36 @@ class CloverXml {
 		$coveredLines = 0;
 		$totalLines = 0;
 		$lines = [];
+		$mStats = [];
+		$mCovered = 0;
+		$mTotal = 0;
+		$class = null;
+		$method = null;
 		foreach ( $node->children() as $child ) {
-			if ( $child->getName() !== 'line' ) {
+			if ( $child->getName() === 'class' ) {
+				$class = $child['name'];
+				if ( isset( $child['namespace'] ) ) {
+					$class = "{$child['namespace']}\\$class";
+				}
+				continue;
+			} elseif ( $child->getName() !== 'line' ) {
 				continue;
 			}
+			if ( $child['type'] == 'method' ) {
+				if ( $method !== null ) {
+					$mStats[$method] = $mCovered / $mTotal * 100;
+					$mCovered = 0;
+					$mTotal = 0;
+				}
+				$method = "$class::{$child['name']}";
+			}
 			$totalLines++;
+			$mTotal++;
 			$lineCovered = (int)$child['count'];
 			if ( $lineCovered ) {
 				// If count > 0 then it's covered
 				$coveredLines++;
+				$mCovered++;
 			}
 			$lines[(int)$child['num']] = $lineCovered;
 		}
@@ -121,7 +147,13 @@ class CloverXml {
 			}
 		}
 
-		$ret = $mode === self::LINES ? $lines : $covered;
+		if ( $mode === self::LINES ) {
+			$ret = $lines;
+		} elseif ( $mode === self::METHODS ) {
+			$ret = $mStats;
+		} else {
+			$ret = $covered;
+		}
 		return [ $path => $ret ];
 	}
 

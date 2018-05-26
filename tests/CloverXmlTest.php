@@ -39,6 +39,14 @@ class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 				"$dir/linter-new.xml",
 				CloverXml::LINES,
 			],
+			[
+				"$dir/linter-old.xml",
+				CloverXml::METHODS,
+			],
+			[
+				"$dir/linter-new.xml",
+				CloverXml::METHODS,
+			],
 		];
 	}
 
