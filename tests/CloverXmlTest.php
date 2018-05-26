@@ -20,6 +20,13 @@ namespace Legoktm\CloverDiff;
 
 class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 
+	/**
+	 * @expectedException \InvalidArgumentException
+	 */
+	public function testConstructor() {
+		new CloverXml( 'doesnotexist.txt' );
+	}
+
 	public function provideGetFiles() {
 		$dir = __DIR__ . '/data/';
 		return [
