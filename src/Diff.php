@@ -35,12 +35,14 @@ class Diff {
 	 * @param array $newFiles Parsed clover.xml
 	 */
 	public function __construct( array $oldFiles, array $newFiles ) {
+		// Use array_filter to remove files that have 0 coverage, because
+		// it's not useful to output a 0 -> 0 diff report
 		$this->missingFromNew = array_diff(
-			array_keys( $oldFiles ),
+			array_keys( array_filter( $oldFiles ) ),
 			array_keys( $newFiles )
 		);
 		$this->missingFromOld = array_diff(
-			array_keys( $newFiles ),
+			array_keys( array_filter( $newFiles ) ),
 			array_keys( $oldFiles )
 		);
 

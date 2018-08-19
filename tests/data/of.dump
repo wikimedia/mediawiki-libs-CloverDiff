@@ -2,12 +2,11 @@ Legoktm\CloverDiff\Diff Object
 (
     [missingFromOld:Legoktm\CloverDiff\Diff:private] => Array
         (
-            [339] => includes/compat/ObjectFactory.php
         )
 
     [missingFromNew:Legoktm\CloverDiff\Diff:private] => Array
         (
-            [649] => includes/libs/ObjectFactory.php
+            [8] => includes/libs/ObjectFactory.php
         )
 
     [changed:Legoktm\CloverDiff\Diff:private] => Array
