@@ -52,6 +52,12 @@ class CloverXml {
 	private $xml;
 
 	/**
+	 * Whether to round or not
+	 * @var bool
+	 */
+	private $rounding = true;
+
+	/**
 	 * @param string $fname Filename
 	 * @throws InvalidArgumentException
 	 */
@@ -61,6 +67,14 @@ class CloverXml {
 		}
 		$this->fname = $fname;
 		$this->xml = new SimpleXMLElement( file_get_contents( $fname ) );
+	}
+
+	/**
+	 * Enable/disable rounding abilities
+	 * @param bool $rounding
+	 */
+	public function setRounding( $rounding ) {
+		$this->rounding = $rounding;
 	}
 
 	/**
@@ -143,12 +157,14 @@ class CloverXml {
 		} else {
 			$covered = $coveredLines / $totalLines * 100;
 			// Do some rounding
-			if ( $totalLines < 500 ) {
-				$covered = round( $covered );
-			} elseif ( $totalLines < 1000 ) {
-				$covered = round( $covered, 1 );
-			} else {
-				$covered = round( $covered, 2 );
+			if ( $this->rounding ) {
+				if ( $totalLines < 500 ) {
+					$covered = round( $covered );
+				} elseif ( $totalLines < 1000 ) {
+					$covered = round( $covered, 1 );
+				} else {
+					$covered = round( $covered, 2 );
+				}
 			}
 		}
 		if ( $commonPath === null ) {

@@ -62,6 +62,11 @@ class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 				CloverXml::METHODS,
 			],
 			[
+				"$dir/linter-new.xml",
+				CloverXml::METHODS,
+				false,
+			],
+			[
 				"$dir/core-old.xml",
 				CloverXml::METHODS,
 			],
@@ -79,15 +84,18 @@ class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 	/**
 	 * @dataProvider provideGetFiles
 	 */
-	public function testGetFiles( $path, $mode ) {
+	public function testGetFiles( $path, $mode, $rounding = true ) {
 		$xml = new CloverXml( $path );
 		$this->assertInstanceOf( CloverXml::class, $xml );
+		$xml->setRounding( $rounding );
 		$output = print_r( $xml->getFiles( $mode ), true );
+		$extra = !$rounding ? '-exact' : '';
+		$fname = "$path.$mode$extra-expected";
 		if ( $this->fix ) {
-			file_put_contents( "$path.$mode-expected", $output );
+			file_put_contents( $fname, $output );
 		}
 		$this->assertSame(
-			file_get_contents( "$path.$mode-expected" ),
+			file_get_contents( $fname ),
 			$output
 		);
 	}
