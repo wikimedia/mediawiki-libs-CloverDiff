@@ -142,6 +142,14 @@ class CloverXml {
 			$covered = 0;
 		} else {
 			$covered = $coveredLines / $totalLines * 100;
+			// Do some rounding
+			if ( $totalLines < 500 ) {
+				$covered = round( $covered );
+			} elseif ( $totalLines < 1000 ) {
+				$covered = round( $covered, 1 );
+			} else {
+				$covered = round( $covered, 2 );
+			}
 		}
 		if ( $commonPath === null ) {
 			$commonPath = $path;

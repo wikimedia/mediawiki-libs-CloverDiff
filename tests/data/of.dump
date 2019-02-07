@@ -42,7 +42,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/ForkController.php] => 0
             [includes/FormOptions.php] => 0
             [includes/GitInfo.php] => 0
-            [includes/GlobalFunctions.php] => 0.62565172054223
+            [includes/GlobalFunctions.php] => 0.6
             [includes/HeaderCallback.php] => 0
             [includes/MediaWikiServices.php] => 0
             [includes/exception/ProcOpenError.php] => 0
@@ -61,7 +61,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/MediaWiki.php] => 0
             [includes/MediaWikiVersionFetcher.php] => 0
             [includes/MergeHistory.php] => 0
-            [includes/Message.php] => 75.668449197861
+            [includes/Message.php] => 76
             [includes/MimeMagic.php] => 0
             [includes/MovePage.php] => 0
             [includes/NoLocalSettings.php] => 0
@@ -272,7 +272,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/auth/AbstractPreAuthenticationProvider.php] => 0
             [includes/auth/AbstractPrimaryAuthenticationProvider.php] => 0
             [includes/auth/AbstractSecondaryAuthenticationProvider.php] => 0
-            [includes/auth/AuthManager.php] => 99.909338168631
+            [includes/auth/AuthManager.php] => 99.91
             [includes/auth/AuthManagerAuthPlugin.php] => 0
             [includes/auth/AuthPluginPrimaryAuthenticationProvider.php] => 0
             [includes/auth/AuthenticationRequest.php] => 0
@@ -366,7 +366,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/config/Config.php] => 0
             [includes/config/ConfigException.php] => 0
             [includes/config/ConfigFactory.php] => 0
-            [includes/config/EtcdConfig.php] => 85.9375
+            [includes/config/EtcdConfig.php] => 86
             [includes/config/EtcdConfigParseError.php] => 0
             [includes/config/GlobalVarConfig.php] => 0
             [includes/config/HashConfig.php] => 0
@@ -408,7 +408,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/debug/logger/LegacyLogger.php] => 0
             [includes/debug/logger/LegacySpi.php] => 0
             [includes/debug/logger/LoggerFactory.php] => 0
-            [includes/debug/logger/MonologSpi.php] => 12.280701754386
+            [includes/debug/logger/MonologSpi.php] => 12
             [includes/debug/logger/NullSpi.php] => 0
             [includes/debug/logger/Spi.php] => 0
             [includes/debug/logger/monolog/AvroFormatter.php] => 0
@@ -517,7 +517,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/gallery/PackedOverlayImageGallery.php] => 0
             [includes/gallery/SlideshowImageGallery.php] => 0
             [includes/gallery/TraditionalImageGallery.php] => 0
-            [includes/htmlform/HTMLForm.php] => 25.043782837128
+            [includes/htmlform/HTMLForm.php] => 25
             [includes/htmlform/HTMLFormElement.php] => 0
             [includes/htmlform/HTMLFormField.php] => 0
             [includes/htmlform/HTMLFormFieldRequiredOptionsException.php] => 0
@@ -722,7 +722,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/libs/mime/defines.php] => 0
             [includes/libs/objectcache/APCBagOStuff.php] => 0
             [includes/libs/objectcache/APCUBagOStuff.php] => 0
-            [includes/libs/objectcache/BagOStuff.php] => 1.8181818181818
+            [includes/libs/objectcache/BagOStuff.php] => 2
             [includes/libs/objectcache/CachedBagOStuff.php] => 0
             [includes/libs/objectcache/EmptyBagOStuff.php] => 0
             [includes/libs/objectcache/HashBagOStuff.php] => 0
@@ -731,10 +731,10 @@ Legoktm\CloverDiff\Diff Object
             [includes/libs/objectcache/MemcachedClient.php] => 0
             [includes/libs/objectcache/MemcachedPeclBagOStuff.php] => 0
             [includes/libs/objectcache/MemcachedPhpBagOStuff.php] => 0
-            [includes/libs/objectcache/MultiWriteBagOStuff.php] => 58.620689655172
+            [includes/libs/objectcache/MultiWriteBagOStuff.php] => 59
             [includes/libs/objectcache/RESTBagOStuff.php] => 0
             [includes/libs/objectcache/RedisBagOStuff.php] => 0
-            [includes/libs/objectcache/ReplicatedBagOStuff.php] => 3.7735849056604
+            [includes/libs/objectcache/ReplicatedBagOStuff.php] => 4
             [includes/libs/objectcache/WANObjectCache.php] => 0
             [includes/libs/objectcache/WANObjectCacheReaper.php] => 0
             [includes/libs/objectcache/WinCacheBagOStuff.php] => 0
@@ -922,7 +922,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/poolcounter/PoolCounterWork.php] => 0
             [includes/poolcounter/PoolCounterWorkViaCallback.php] => 0
             [includes/poolcounter/PoolWorkArticleView.php] => 0
-            [includes/preferences/DefaultPreferencesFactory.php] => 1.9875776397516
+            [includes/preferences/DefaultPreferencesFactory.php] => 2
             [includes/preferences/PreferencesFactory.php] => 0
             [includes/profiler/ProfileSection.php] => 0
             [includes/profiler/Profiler.php] => 0
@@ -1041,7 +1041,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/session/SessionBackend.php] => 0
             [includes/session/SessionId.php] => 0
             [includes/session/SessionInfo.php] => 0
-            [includes/session/SessionManager.php] => 99.277108433735
+            [includes/session/SessionManager.php] => 99
             [includes/session/SessionProvider.php] => 0
             [includes/session/Token.php] => 0
             [includes/session/UserInfo.php] => 0
@@ -1087,7 +1087,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/specialpage/QueryPage.php] => 0
             [includes/specialpage/RedirectSpecialPage.php] => 0
             [includes/specialpage/SpecialPage.php] => 0
-            [includes/specialpage/SpecialPageFactory.php] => 42.259414225941
+            [includes/specialpage/SpecialPageFactory.php] => 42
             [includes/specialpage/UnlistedSpecialPage.php] => 0
             [includes/specialpage/WantedQueryPage.php] => 0
             [includes/specials/SpecialActiveusers.php] => 0
@@ -1262,7 +1262,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/upload/UploadFromUrl.php] => 0
             [includes/upload/UploadStash.php] => 0
             [includes/user/BotPassword.php] => 0
-            [includes/user/CentralIdLookup.php] => 66.101694915254
+            [includes/user/CentralIdLookup.php] => 66
             [includes/user/ExternalUserNames.php] => 0
             [includes/user/LocalIdLookup.php] => 0
             [includes/user/LoggedOutEditToken.php] => 0
@@ -1615,7 +1615,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/ForkController.php] => 0
             [includes/FormOptions.php] => 0
             [includes/GitInfo.php] => 0
-            [includes/GlobalFunctions.php] => 0.62565172054223
+            [includes/GlobalFunctions.php] => 0.6
             [includes/HeaderCallback.php] => 0
             [includes/MediaWikiServices.php] => 0
             [includes/exception/ProcOpenError.php] => 0
@@ -1634,7 +1634,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/MediaWiki.php] => 0
             [includes/MediaWikiVersionFetcher.php] => 0
             [includes/MergeHistory.php] => 0
-            [includes/Message.php] => 75.668449197861
+            [includes/Message.php] => 76
             [includes/MimeMagic.php] => 0
             [includes/MovePage.php] => 0
             [includes/NoLocalSettings.php] => 0
@@ -1845,7 +1845,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/auth/AbstractPreAuthenticationProvider.php] => 0
             [includes/auth/AbstractPrimaryAuthenticationProvider.php] => 0
             [includes/auth/AbstractSecondaryAuthenticationProvider.php] => 0
-            [includes/auth/AuthManager.php] => 99.909338168631
+            [includes/auth/AuthManager.php] => 99.91
             [includes/auth/AuthManagerAuthPlugin.php] => 0
             [includes/auth/AuthPluginPrimaryAuthenticationProvider.php] => 0
             [includes/auth/AuthenticationRequest.php] => 0
@@ -1940,7 +1940,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/config/Config.php] => 0
             [includes/config/ConfigException.php] => 0
             [includes/config/ConfigFactory.php] => 0
-            [includes/config/EtcdConfig.php] => 85.9375
+            [includes/config/EtcdConfig.php] => 86
             [includes/config/EtcdConfigParseError.php] => 0
             [includes/config/GlobalVarConfig.php] => 0
             [includes/config/HashConfig.php] => 0
@@ -1982,7 +1982,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/debug/logger/LegacyLogger.php] => 0
             [includes/debug/logger/LegacySpi.php] => 0
             [includes/debug/logger/LoggerFactory.php] => 0
-            [includes/debug/logger/MonologSpi.php] => 12.280701754386
+            [includes/debug/logger/MonologSpi.php] => 12
             [includes/debug/logger/NullSpi.php] => 0
             [includes/debug/logger/Spi.php] => 0
             [includes/debug/logger/monolog/AvroFormatter.php] => 0
@@ -2091,7 +2091,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/gallery/PackedOverlayImageGallery.php] => 0
             [includes/gallery/SlideshowImageGallery.php] => 0
             [includes/gallery/TraditionalImageGallery.php] => 0
-            [includes/htmlform/HTMLForm.php] => 25.043782837128
+            [includes/htmlform/HTMLForm.php] => 25
             [includes/htmlform/HTMLFormElement.php] => 0
             [includes/htmlform/HTMLFormField.php] => 0
             [includes/htmlform/HTMLFormFieldRequiredOptionsException.php] => 0
@@ -2295,7 +2295,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/libs/mime/defines.php] => 0
             [includes/libs/objectcache/APCBagOStuff.php] => 0
             [includes/libs/objectcache/APCUBagOStuff.php] => 0
-            [includes/libs/objectcache/BagOStuff.php] => 1.8181818181818
+            [includes/libs/objectcache/BagOStuff.php] => 2
             [includes/libs/objectcache/CachedBagOStuff.php] => 0
             [includes/libs/objectcache/EmptyBagOStuff.php] => 0
             [includes/libs/objectcache/HashBagOStuff.php] => 0
@@ -2304,10 +2304,10 @@ Legoktm\CloverDiff\Diff Object
             [includes/libs/objectcache/MemcachedClient.php] => 0
             [includes/libs/objectcache/MemcachedPeclBagOStuff.php] => 0
             [includes/libs/objectcache/MemcachedPhpBagOStuff.php] => 0
-            [includes/libs/objectcache/MultiWriteBagOStuff.php] => 58.620689655172
+            [includes/libs/objectcache/MultiWriteBagOStuff.php] => 59
             [includes/libs/objectcache/RESTBagOStuff.php] => 0
             [includes/libs/objectcache/RedisBagOStuff.php] => 0
-            [includes/libs/objectcache/ReplicatedBagOStuff.php] => 3.7735849056604
+            [includes/libs/objectcache/ReplicatedBagOStuff.php] => 4
             [includes/libs/objectcache/WANObjectCache.php] => 0
             [includes/libs/objectcache/WANObjectCacheReaper.php] => 0
             [includes/libs/objectcache/WinCacheBagOStuff.php] => 0
@@ -2495,7 +2495,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/poolcounter/PoolCounterWork.php] => 0
             [includes/poolcounter/PoolCounterWorkViaCallback.php] => 0
             [includes/poolcounter/PoolWorkArticleView.php] => 0
-            [includes/preferences/DefaultPreferencesFactory.php] => 1.9875776397516
+            [includes/preferences/DefaultPreferencesFactory.php] => 2
             [includes/preferences/PreferencesFactory.php] => 0
             [includes/profiler/ProfileSection.php] => 0
             [includes/profiler/Profiler.php] => 0
@@ -2614,7 +2614,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/session/SessionBackend.php] => 0
             [includes/session/SessionId.php] => 0
             [includes/session/SessionInfo.php] => 0
-            [includes/session/SessionManager.php] => 99.277108433735
+            [includes/session/SessionManager.php] => 99
             [includes/session/SessionProvider.php] => 0
             [includes/session/Token.php] => 0
             [includes/session/UserInfo.php] => 0
@@ -2660,7 +2660,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/specialpage/QueryPage.php] => 0
             [includes/specialpage/RedirectSpecialPage.php] => 0
             [includes/specialpage/SpecialPage.php] => 0
-            [includes/specialpage/SpecialPageFactory.php] => 42.259414225941
+            [includes/specialpage/SpecialPageFactory.php] => 42
             [includes/specialpage/UnlistedSpecialPage.php] => 0
             [includes/specialpage/WantedQueryPage.php] => 0
             [includes/specials/SpecialActiveusers.php] => 0
@@ -2835,7 +2835,7 @@ Legoktm\CloverDiff\Diff Object
             [includes/upload/UploadFromUrl.php] => 0
             [includes/upload/UploadStash.php] => 0
             [includes/user/BotPassword.php] => 0
-            [includes/user/CentralIdLookup.php] => 66.101694915254
+            [includes/user/CentralIdLookup.php] => 66
             [includes/user/ExternalUserNames.php] => 0
             [includes/user/LocalIdLookup.php] => 0
             [includes/user/LoggedOutEditToken.php] => 0

@@ -7,9 +7,9 @@ Array
     [Database.php] => 0
     [Hooks.php] => 0
     [LintError.php] => 0
-    [LintErrorsPager.php] => 25.961538461538
+    [LintErrorsPager.php] => 26
     [MissingCategoryException.php] => 0
     [RecordLintJob.php] => 0
-    [SpecialLintErrors.php] => 94.285714285714
+    [SpecialLintErrors.php] => 94
     [TotalsLookup.php] => 0
 )
