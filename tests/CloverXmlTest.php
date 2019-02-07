@@ -20,6 +20,13 @@ namespace Legoktm\CloverDiff;
 
 class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 
+	private $fix = false;
+
+	public function setUp() {
+		parent::setUp();
+		$this->fix = (bool)getenv( 'FIX' );
+	}
+
 	/**
 	 * @expectedException \InvalidArgumentException
 	 */
@@ -76,6 +83,9 @@ class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 		$xml = new CloverXml( $path );
 		$this->assertInstanceOf( CloverXml::class, $xml );
 		$output = print_r( $xml->getFiles( $mode ), true );
+		if ( $this->fix ) {
+			file_put_contents( "$path.$mode-expected", $output );
+		}
 		$this->assertSame(
 			file_get_contents( "$path.$mode-expected" ),
 			$output
