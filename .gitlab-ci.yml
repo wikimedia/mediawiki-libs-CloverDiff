@@ -4,19 +4,25 @@ stages:
 php-70:
   stage: test
   image: debian:stretch
+  cache:
+    paths:
+      - .cache
   before_script:
     - apt-get update && apt-get install php-cli php-xml composer -y
   script:
     - composer validate
-    - composer install
+    - composer install --no-progress
     - composer test
 
 php-73:
   stage: test
   image: debian:buster
+  cache:
+    paths:
+      - .cache
   before_script:
     - apt-get update && apt-get install php-cli php-xml composer -y
   script:
     - composer validate
-    - composer install
+    - composer install --no-progress
     - composer test
