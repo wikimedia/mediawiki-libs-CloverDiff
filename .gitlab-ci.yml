@@ -5,7 +5,7 @@ php-70:
   stage: test
   image: debian:stretch
   before_script:
-    - apt-get update && apt-get install php-cli composer -y
+    - apt-get update && apt-get install php-cli php-xml composer -y
   script:
     - composer validate
     - composer install
@@ -15,7 +15,7 @@ php-73:
   stage: test
   image: debian:buster
   before_script:
-    - apt-get update && apt-get install php-cli composer -y
+    - apt-get update && apt-get install php-cli php-xml composer -y
   script:
     - composer validate
     - composer install
