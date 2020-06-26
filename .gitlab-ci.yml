@@ -8,7 +8,7 @@ php-70:
     paths:
       - .cache
   before_script:
-    - apt-get update && apt-get install php-cli php-xml composer -y
+    - apt-get update && apt-get install php-cli php-intl php-xml php-zip unzip composer -y
   script:
     - composer validate
     - composer install --no-progress
@@ -21,7 +21,7 @@ php-73:
     paths:
       - .cache
   before_script:
-    - apt-get update && apt-get install php-cli php-xml composer -y
+    - apt-get update && apt-get install php-cli php-intl php-xml php-zip unzip composer -y
   script:
     - composer validate
     - composer install --no-progress
