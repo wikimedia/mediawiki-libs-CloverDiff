@@ -25,7 +25,7 @@
 		"php-parallel-lint/php-parallel-lint": "1.2.0",
 		"php-parallel-lint/php-console-highlighter": "0.5.0",
 		"mediawiki/mediawiki-codesniffer": "19.2.0",
-		"mediawiki/minus-x": "1.1.0",
+		"mediawiki/minus-x": "0.3.2 || 1.1.0",
 		"phpunit/phpunit": "4.8.36 || ^6.5"
 	},
 	"scripts": {
