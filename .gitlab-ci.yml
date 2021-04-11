@@ -26,3 +26,16 @@ php-73:
     - composer validate
     - composer install --no-progress
     - composer test
+
+php-74:
+  stage: test
+  image: debian:bullseye
+  cache:
+    paths:
+      - .cache
+  before_script:
+    - apt-get update && apt-get install php-cli php-intl php-xml php-zip unzip composer -y
+  script:
+    - composer validate
+    - composer install --no-progress
+    - composer test
