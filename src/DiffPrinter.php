@@ -68,7 +68,7 @@ class DiffPrinter {
 				6,
 				' ',
 				STR_PAD_LEFT
-			). "</$color>";
+			) . "</$color>";
 	}
 
 	/**
@@ -111,7 +111,7 @@ class DiffPrinter {
 
 		if ( $tableRows ) {
 			// Sort all files in order!
-			usort( $tableRows, function ( $a, $b ) {
+			usort( $tableRows, static function ( $a, $b ) {
 				return strcmp( $a[0], $b[0] );
 			} );
 

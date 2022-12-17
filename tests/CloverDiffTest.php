@@ -26,15 +26,17 @@ use Symfony\Component\Console\Output\BufferedOutput;
  */
 class CloverDiffTest extends TestCase {
 
+	/**
+	 * @var bool
+	 */
 	private $fix = false;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->fix = (bool)getenv( 'FIX' );
 	}
 
 	public function provideDiff() {
-		$dir = __DIR__ . '/data';
 		return [
 			[ 'of' ],
 			[ 'linter' ],
@@ -69,9 +71,8 @@ class CloverDiffTest extends TestCase {
 		if ( $this->fix ) {
 			file_put_contents( $console, $buffer );
 		}
-		$this->assertSame(
-			file_get_contents( $console ),
-			$buffer
+		$this->assertStringEqualsFile(
+			$console, $buffer
 		);
 	}
 }

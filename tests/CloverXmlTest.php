@@ -18,19 +18,22 @@
 
 namespace Legoktm\CloverDiff;
 
-class CloverXmlTest extends \PHPUnit\Framework\TestCase {
+use PHPUnit\Framework\TestCase;
 
+class CloverXmlTest extends TestCase {
+
+	/**
+	 * @var bool
+	 */
 	private $fix = false;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->fix = (bool)getenv( 'FIX' );
 	}
 
-	/**
-	 * @expectedException \InvalidArgumentException
-	 */
 	public function testConstructor() {
+		$this->expectException( \InvalidArgumentException::class );
 		new CloverXml( 'doesnotexist.txt' );
 	}
 
@@ -94,8 +97,8 @@ class CloverXmlTest extends \PHPUnit\Framework\TestCase {
 		if ( $this->fix ) {
 			file_put_contents( $fname, $output );
 		}
-		$this->assertSame(
-			file_get_contents( $fname ),
+		$this->assertStringEqualsFile(
+			$fname,
 			$output
 		);
 	}
