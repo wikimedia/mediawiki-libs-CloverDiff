@@ -23,11 +23,29 @@ namespace Legoktm\CloverDiff;
  */
 class Diff {
 
-	private $missingFromOld = [];
-	private $missingFromNew = [];
-	private $changed = [];
+	/**
+	 * @var int[]|string[]
+	 */
+	private $missingFromOld;
 
+	/**
+	 * @var int[]|string[]
+	 */
+	private $missingFromNew;
+
+	/**
+	 * @var array
+	 */
+	private $changed;
+
+	/**
+	 * @var array
+	 */
 	private $oldFiles;
+
+	/**
+	 * @var array
+	 */
 	private $newFiles;
 
 	/**

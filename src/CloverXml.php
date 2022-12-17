@@ -29,17 +29,17 @@ class CloverXml {
 	/**
 	 * Count percentage covered
 	 */
-	const PERCENTAGE = 1;
+	public const PERCENTAGE = 1;
 
 	/**
 	 * Return (un)covered lines
 	 */
-	const LINES = 2;
+	public const LINES = 2;
 
 	/**
 	 * Count coverage status of classes and functions
 	 */
-	const METHODS = 3;
+	public const METHODS = 3;
 
 	/**
 	 * @var string
@@ -109,6 +109,13 @@ class CloverXml {
 		return $sanePathFiles;
 	}
 
+	/**
+	 * @param SimpleXMLElement $node
+	 * @param string|null &$commonPath
+	 * @param int $mode
+	 *
+	 * @return array[]|float[]|int[]
+	 */
 	private function handleFileNode( SimpleXMLElement $node, &$commonPath, $mode ) {
 		$coveredLines = 0;
 		$totalLines = 0;
