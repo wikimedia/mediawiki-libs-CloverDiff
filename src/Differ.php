@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Legoktm\CloverDiff;
+namespace Wikimedia\CloverDiff;
 
 /**
  * Diff two files
@@ -29,7 +29,7 @@ class Differ {
 	 *
 	 * @return Diff
 	 */
-	public function diff( $old, $new ) {
+	public function diff( $old, $new ): Diff {
 		if ( $old && !( $old instanceof CloverXml ) ) {
 			$old = new CloverXml( $old );
 		}

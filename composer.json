@@ -1,8 +1,8 @@
 {
-	"name": "legoktm/clover-diff",
+	"name": "wikimedia/clover-diff",
 	"description": "A tool to create a diff of two clover.xml files",
 	"license": "GPL-3.0-or-later",
-	"homepage": "https://gitlab.com/legoktm/clover-diff",
+	"homepage": "https://gerrit.wikimedia.org/g/mediawiki/libs/CloverDiff/",
 	"authors": [
 		{
 			"name": "Kunal Mehta",
@@ -11,7 +11,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Legoktm\\CloverDiff\\": "src/"
+			"Wikimedia\\CloverDiff\\": "src/"
 		}
 	},
 	"bin": [

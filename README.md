@@ -5,7 +5,7 @@ A PHP tool to diff two clover.xml files.
 
 To install:
 ```
-composer require-dev legoktm/clover-diff
+composer require-dev wikimedia/clover-diff
 ```
 
 Usage:

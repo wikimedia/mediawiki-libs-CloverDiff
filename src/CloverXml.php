@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Legoktm\CloverDiff;
+namespace Wikimedia\CloverDiff;
 
 use InvalidArgumentException;
 use SimpleXMLElement;
@@ -73,7 +73,7 @@ class CloverXml {
 	 * Enable/disable rounding abilities
 	 * @param bool $rounding
 	 */
-	public function setRounding( $rounding ) {
+	public function setRounding( $rounding ): void {
 		$this->rounding = $rounding;
 	}
 
@@ -81,7 +81,7 @@ class CloverXml {
 	 * @param int $mode
 	 * @return array
 	 */
-	public function getFiles( $mode = self::PERCENTAGE ) {
+	public function getFiles( $mode = self::PERCENTAGE ): array {
 		$files = [];
 		$commonPath = null;
 		foreach ( $this->xml->project->children() as $node ) {
@@ -117,7 +117,7 @@ class CloverXml {
 	 *
 	 * @return array[]|float[]|int[]
 	 */
-	private function handleFileNode( SimpleXMLElement $node, &$commonPath, $mode ) {
+	private function handleFileNode( SimpleXMLElement $node, &$commonPath, $mode ): array {
 		$coveredLines = 0;
 		$totalLines = 0;
 		$lines = [];
@@ -137,7 +137,8 @@ class CloverXml {
 					$class = "{$child['namespace']}\\$class";
 				}
 				continue;
-			} elseif ( $child->getName() !== 'line' ) {
+			}
+			if ( $child->getName() !== 'line' ) {
 				continue;
 			}
 			if ( $child['type'] == 'method' ) {

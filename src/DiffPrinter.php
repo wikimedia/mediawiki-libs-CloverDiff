@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Legoktm\CloverDiff;
+namespace Wikimedia\CloverDiff;
 
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -46,7 +46,7 @@ class DiffPrinter {
 	 *
 	 * @return string
 	 */
-	private function format( $num ) {
+	private function format( $num ): string {
 		if ( $num < 50 ) {
 			$color = 'error';
 		} elseif ( $num > 90 ) {
@@ -61,7 +61,7 @@ class DiffPrinter {
 			'0',
 			STR_PAD_LEFT
 		);
-		// Pad leading space to lign up with 100%,
+		// Pad leading space to line up with 100%,
 		// and pick a color!
 		return "<$color>" . str_pad(
 				$pad,
@@ -76,7 +76,7 @@ class DiffPrinter {
 	 *
 	 * @return bool Whether any file had lower coverage afterwards
 	 */
-	public function show( Diff $diff ) {
+	public function show( Diff $diff ): bool {
 		$tableRows = [];
 		foreach ( $diff->getMissingFromNew() as $fname => $val ) {
 			$tableRows[] = [
@@ -96,7 +96,7 @@ class DiffPrinter {
 
 		$lowered = false;
 		foreach ( $diff->getChanged() as $fname => $info ) {
-			list( $old, $new ) = $info;
+			[ $old, $new ] = $info;
 			$tableRows[] = [
 				$fname,
 				$this->format( $old ),

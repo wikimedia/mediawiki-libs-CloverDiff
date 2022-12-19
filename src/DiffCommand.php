@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Legoktm\CloverDiff;
+namespace Wikimedia\CloverDiff;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -44,7 +44,7 @@ class DiffCommand extends Command {
 	 *
 	 * @return int
 	 */
-	protected function execute( InputInterface $input, OutputInterface $output ) {
+	protected function execute( InputInterface $input, OutputInterface $output ): int {
 		$differ = new Differ();
 		$diff = $differ->diff(
 			$input->getArgument( 'first' ),

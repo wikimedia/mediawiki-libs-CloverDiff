@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Legoktm\CloverDiff;
+namespace Wikimedia\CloverDiff;
 
 /**
  * Represents changes to coverage
@@ -88,7 +88,7 @@ class Diff {
 	 *
 	 * @return array
 	 */
-	public function getMissingFromOld() {
+	public function getMissingFromOld(): array {
 		$rows = [];
 		foreach ( $this->missingFromOld as $fname ) {
 			$rows[$fname] = $this->newFiles[$fname];
@@ -102,7 +102,7 @@ class Diff {
 	 *
 	 * @return array
 	 */
-	public function getMissingFromNew() {
+	public function getMissingFromNew(): array {
 		$rows = [];
 		foreach ( $this->missingFromNew as $fname ) {
 			$rows[$fname] = $this->oldFiles[$fname];
@@ -116,7 +116,7 @@ class Diff {
 	 *
 	 * @return array
 	 */
-	public function getChanged() {
+	public function getChanged(): array {
 		$rows = [];
 		foreach ( $this->changed as $fname ) {
 			$rows[$fname] = [

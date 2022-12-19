@@ -16,8 +16,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Legoktm\CloverDiff;
+namespace Wikimedia\CloverDiff;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class CloverXmlTest extends TestCase {
@@ -33,7 +34,7 @@ class CloverXmlTest extends TestCase {
 	}
 
 	public function testConstructor() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		new CloverXml( 'doesnotexist.txt' );
 	}
 

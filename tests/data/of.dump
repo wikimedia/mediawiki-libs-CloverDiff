@@ -1,19 +1,19 @@
-Legoktm\CloverDiff\Diff Object
+Wikimedia\CloverDiff\Diff Object
 (
-    [missingFromOld:Legoktm\CloverDiff\Diff:private] => Array
+    [missingFromOld:Wikimedia\CloverDiff\Diff:private] => Array
         (
         )
 
-    [missingFromNew:Legoktm\CloverDiff\Diff:private] => Array
+    [missingFromNew:Wikimedia\CloverDiff\Diff:private] => Array
         (
             [8] => includes/libs/ObjectFactory.php
         )
 
-    [changed:Legoktm\CloverDiff\Diff:private] => Array
+    [changed:Wikimedia\CloverDiff\Diff:private] => Array
         (
         )
 
-    [oldFiles:Legoktm\CloverDiff\Diff:private] => Array
+    [oldFiles:Wikimedia\CloverDiff\Diff:private] => Array
         (
             [includes/AjaxDispatcher.php] => 0
             [includes/AjaxResponse.php] => 0
@@ -1586,7 +1586,7 @@ Legoktm\CloverDiff\Diff Object
             [maintenance/wrapOldPasswords.php] => 0
         )
 
-    [newFiles:Legoktm\CloverDiff\Diff:private] => Array
+    [newFiles:Wikimedia\CloverDiff\Diff:private] => Array
         (
             [includes/AjaxDispatcher.php] => 0
             [includes/AjaxResponse.php] => 0
