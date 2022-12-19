@@ -102,6 +102,7 @@ class CloverXml {
 		// Now strip common path from everything...
 		$sanePathFiles = [];
 		foreach ( $files as $path => $info ) {
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullableInternal
 			$newPath = str_replace( $commonPath, '', $path );
 			$sanePathFiles[$newPath] = $info;
 		}
@@ -141,10 +142,12 @@ class CloverXml {
 			}
 			if ( $child['type'] == 'method' ) {
 				if ( $method !== null ) {
+					// @phan-suppress-next-line PhanDivisionByZero
 					$mStats[$method] = $mCovered / $mTotal * 100;
 					$mCovered = 0;
 					$mTotal = 0;
 				}
+				// @phan-suppress-next-line PhanTypeSuspiciousStringExpression
 				$method = "$class::{$child['name']}";
 			}
 			$totalLines++;
