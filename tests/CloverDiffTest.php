@@ -16,10 +16,12 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Wikimedia\CloverDiff;
+namespace Wikimedia\CloverDiff\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\BufferedOutput;
+use Wikimedia\CloverDiff\Differ;
+use Wikimedia\CloverDiff\DiffPrinter;
 
 /**
  * Integration tests
@@ -58,8 +60,8 @@ class CloverDiffTest extends TestCase {
 		if ( $this->fix ) {
 			file_put_contents( $dump, $realDump );
 		}
-		$this->assertSame(
-			file_get_contents( $dump ),
+		$this->assertStringEqualsFile(
+			$dump,
 			$realDump
 		);
 

@@ -16,10 +16,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Wikimedia\CloverDiff;
+namespace Wikimedia\CloverDiff\Tests;
 
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use Wikimedia\CloverDiff\CloverXml;
 
 class CloverXmlTest extends TestCase {
 
