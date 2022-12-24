@@ -26,27 +26,27 @@ class Diff {
 	/**
 	 * @var int[]|string[]
 	 */
-	private $missingFromOld;
+	private array $missingFromOld;
 
 	/**
 	 * @var int[]|string[]
 	 */
-	private $missingFromNew;
+	private array $missingFromNew;
 
 	/**
 	 * @var array
 	 */
-	private $changed;
+	private array $changed;
 
 	/**
 	 * @var array
 	 */
-	private $oldFiles;
+	private array $oldFiles;
 
 	/**
 	 * @var array
 	 */
-	private $newFiles;
+	private array $newFiles;
 
 	/**
 	 * @param array $oldFiles Parsed clover.xml

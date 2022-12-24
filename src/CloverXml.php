@@ -44,24 +44,25 @@ class CloverXml {
 	/**
 	 * @var string
 	 */
-	private $fname;
+	private string $fname;
 
 	/**
 	 * @var SimpleXMLElement
 	 */
-	private $xml;
+	private SimpleXMLElement $xml;
 
 	/**
 	 * Whether to round or not
 	 * @var bool
 	 */
-	private $rounding = true;
+	private bool $rounding = true;
 
 	/**
 	 * @param string $fname Filename
+	 *
 	 * @throws InvalidArgumentException
 	 */
-	public function __construct( $fname ) {
+	public function __construct( string $fname ) {
 		if ( !file_exists( $fname ) ) {
 			throw new InvalidArgumentException( "$fname doesn't exist" );
 		}
@@ -71,17 +72,19 @@ class CloverXml {
 
 	/**
 	 * Enable/disable rounding abilities
+	 *
 	 * @param bool $rounding
 	 */
-	public function setRounding( $rounding ): void {
+	public function setRounding( bool $rounding ): void {
 		$this->rounding = $rounding;
 	}
 
 	/**
 	 * @param int $mode
+	 *
 	 * @return array
 	 */
-	public function getFiles( $mode = self::PERCENTAGE ): array {
+	public function getFiles( int $mode = self::PERCENTAGE ): array {
 		$files = [];
 		$commonPath = null;
 		foreach ( $this->xml->project->children() as $node ) {
@@ -117,7 +120,7 @@ class CloverXml {
 	 *
 	 * @return array[]|float[]|int[]
 	 */
-	private function handleFileNode( SimpleXMLElement $node, &$commonPath, $mode ): array {
+	private function handleFileNode( SimpleXMLElement $node, ?string &$commonPath, int $mode ): array {
 		$coveredLines = 0;
 		$totalLines = 0;
 		$lines = [];

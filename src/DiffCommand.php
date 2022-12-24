@@ -27,7 +27,7 @@ class DiffCommand extends Command {
 	/**
 	 * Set up our parameters/arguments
 	 */
-	protected function configure() {
+	protected function configure(): void {
 		$this->setName( 'diff' )
 			->addArgument(
 				'first', InputArgument::REQUIRED,

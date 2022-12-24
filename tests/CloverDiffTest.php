@@ -31,14 +31,14 @@ class CloverDiffTest extends TestCase {
 	/**
 	 * @var bool
 	 */
-	private $fix = false;
+	private bool $fix = false;
 
 	public function setUp(): void {
 		parent::setUp();
 		$this->fix = (bool)getenv( 'FIX' );
 	}
 
-	public function provideDiff() {
+	public function provideDiff(): array {
 		return [
 			[ 'of' ],
 			[ 'linter' ],
@@ -49,7 +49,7 @@ class CloverDiffTest extends TestCase {
 	/**
 	 * @dataProvider provideDiff
 	 */
-	public function testDiff( $name ) {
+	public function testDiff( $name ): void {
 		$differ = new Differ();
 		$dir = __DIR__ . '/data';
 		$old = "$dir/$name-old.xml";

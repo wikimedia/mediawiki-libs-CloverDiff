@@ -30,7 +30,7 @@ class DiffPrinter {
 	/**
 	 * @var OutputInterface
 	 */
-	private $output;
+	private OutputInterface $output;
 
 	/**
 	 * @param OutputInterface $output stdout
@@ -42,11 +42,11 @@ class DiffPrinter {
 	/**
 	 * Fancy coloring and padding for numbers
 	 *
-	 * @param int $num
+	 * @param float $num
 	 *
 	 * @return string
 	 */
-	private function format( $num ): string {
+	private function format( float $num ): string {
 		if ( $num < 50 ) {
 			$color = 'error';
 		} elseif ( $num > 90 ) {
@@ -64,11 +64,11 @@ class DiffPrinter {
 		// Pad leading space to line up with 100%,
 		// and pick a color!
 		return "<$color>" . str_pad(
-				$pad,
-				6,
-				' ',
-				STR_PAD_LEFT
-			) . "</$color>";
+			$pad,
+			6,
+			' ',
+			STR_PAD_LEFT
+		) . "</$color>";
 	}
 
 	/**

@@ -27,19 +27,19 @@ class CloverXmlTest extends TestCase {
 	/**
 	 * @var bool
 	 */
-	private $fix = false;
+	private bool $fix = false;
 
 	public function setUp(): void {
 		parent::setUp();
 		$this->fix = (bool)getenv( 'FIX' );
 	}
 
-	public function testConstructor() {
+	public function testConstructor(): void {
 		$this->expectException( InvalidArgumentException::class );
 		new CloverXml( 'doesnotexist.txt' );
 	}
 
-	public function provideGetFiles() {
+	public function provideGetFiles(): array {
 		$dir = __DIR__ . '/data/';
 		return [
 			[
@@ -89,7 +89,7 @@ class CloverXmlTest extends TestCase {
 	/**
 	 * @dataProvider provideGetFiles
 	 */
-	public function testGetFiles( $path, $mode, $rounding = true ) {
+	public function testGetFiles( $path, $mode, $rounding = true ): void {
 		$xml = new CloverXml( $path );
 		$this->assertInstanceOf( CloverXml::class, $xml );
 		$xml->setRounding( $rounding );
