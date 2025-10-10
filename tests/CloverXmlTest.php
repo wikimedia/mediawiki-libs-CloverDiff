@@ -52,7 +52,7 @@ class CloverXmlTest extends TestCase {
 		new CloverXml( 'doesnotexist.txt' );
 	}
 
-	public function provideGetFiles(): array {
+	public static function provideGetFiles(): array {
 		$dir = __DIR__ . '/data';
 		return [
 			[

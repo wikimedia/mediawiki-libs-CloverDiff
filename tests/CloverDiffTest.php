@@ -41,7 +41,7 @@ class CloverDiffTest extends TestCase {
 		$this->fix = (bool)getenv( 'FIX' );
 	}
 
-	public function provideDiff(): array {
+	public static function provideDiff(): array {
 		return [
 			[ 'of' ],
 			[ 'linter' ],
