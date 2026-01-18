@@ -71,6 +71,10 @@ class CloverDiffTest extends TestCase {
 		$printer->show( $diff );
 		$console = $this->decompress( "$dir/$name-console.txt" );
 		$buffer = $output->fetch();
+
+		// Do a "\r\n" -> "\n" and "\r" -> "\n" transformation for windows machine
+		$buffer = str_replace( [ "\r\n", "\r" ], "\n", $buffer );
+
 		if ( $this->fix ) {
 			file_put_contents( "$console.gz", gzencode( $buffer ) );
 		}
