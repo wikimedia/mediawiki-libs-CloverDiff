@@ -32,11 +32,6 @@ class CloverXml {
 	public const METHODS = 3;
 
 	/**
-	 * @var string
-	 */
-	private string $fname;
-
-	/**
 	 * @var SimpleXMLElement
 	 */
 	private SimpleXMLElement $xml;
@@ -56,7 +51,6 @@ class CloverXml {
 		if ( !file_exists( $fname ) ) {
 			throw new InvalidArgumentException( "$fname doesn't exist" );
 		}
-		$this->fname = $fname;
 		$this->xml = new SimpleXMLElement( file_get_contents( $fname ) );
 	}
 
